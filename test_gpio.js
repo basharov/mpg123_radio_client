@@ -5,17 +5,16 @@ let gpio5 = new Gpio({
     let value = 1;
 
     setInterval(function () {
-      process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
 
       if (value) {
-        console.log('\x1b[32m%s\x1b[0m', `ON`);
+        console.log('ON');
       } else {
-        console.log('\x1b[31m%s\x1b[0m', `OFF`);
+        console.log('OFF');
       }
 
       gpio5.write(value);
       value = +!value;
-    }, 2000);
+    }, 1000);
 
   }
 });
