@@ -15,7 +15,7 @@ let gpio5 = new Gpio({
 
       gpio5.write(value);
       value = +!value;
-    }, 50);
+    }, 2000);
 
   }
 });
