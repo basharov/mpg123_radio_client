@@ -1,6 +1,6 @@
 const Gpio = require('orange-pi-gpio');
 
-let gpio5 = new Gpio({pin:11});
+let gpio5 = new Gpio({pin:9});
 
 gpio5.read()
   .then((state)=>{
