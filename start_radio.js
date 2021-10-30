@@ -36,7 +36,7 @@ const initKeyboard = () => {
 
 const loadSavedState = () => {
   Object.keys(pins).forEach((pinKey) => {
-    pins[pinKey].read()
+    pins[pinKey].pin.read()
       .then((state) => {
         console.log(state)
       });
