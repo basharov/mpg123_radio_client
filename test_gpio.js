@@ -10,7 +10,7 @@ let value = 0;
 let gpio1 = new Gpio({pin: 1, mode: 'in'});
 
 const switchChannel = () => {
-  exec('./play 1.sh', (err, stdout, stderr) => {
+  exec('./play.sh 1', (err, stdout, stderr) => {
     if (err) {
       //some err occurred
       console.error(err)
