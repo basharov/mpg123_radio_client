@@ -38,6 +38,8 @@ const loadSavedState = () => {
   Object.keys(pins).forEach((pinKey) => {
     pins[pinKey].pin.read()
       .then((state) => {
+        console.log(state)
+        console.log(typeof state)
         if (state === 0) {
           console.log(pinKey)
         }
