@@ -6,6 +6,10 @@ echo "Will play $1"
 
 case $1 in
 
+  0)
+    echo 'LOAD http://ice6.somafm.com/specials-128-mp3' >> $PIPE_FILE
+    ;;
+
   1)
     echo 'LOAD http://ice4.somafm.com/vaporwaves-128-mp3' >> $PIPE_FILE
     ;;
