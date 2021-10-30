@@ -1,10 +1,22 @@
 const Gpio = require('orange-pi-gpio');
 
 
-for (let i = 1; i < 41; i++) {
-  let gpio5 = new Gpio({pin: i});
-  gpio5.read()
-    .then((state) => {
-      console.log({i, state}); //state of pin 5
-    })
-}
+let gpio12 = new Gpio({
+  pin: 12, mode: 'out', ready: () => {
+    let value = 1;
+
+    setInterval(function () {
+      process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
+
+      if (value) {
+        console.log('\x1b[32m%s\x1b[0m', `ON`);
+      } else {
+        console.log('\x1b[31m%s\x1b[0m', `OFF`);
+      }
+
+      gpio12.write(value);
+      value = +!value;
+    }, 1000);
+
+  }
+});
