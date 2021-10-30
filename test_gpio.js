@@ -11,6 +11,7 @@ let gpio0 = new Gpio({
     process.stdin.on('keypress', (str, key) => {
       console.log(str)
       console.log(key)
+      console.log(value)
       gpio0.write(value === 1 ? 0 : 1);
     })
   }
