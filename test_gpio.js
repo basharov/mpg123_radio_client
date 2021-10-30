@@ -39,6 +39,7 @@ let gpio0 = new Gpio({
           gpio0.write(value);
           console.log({channel, value})
           if (channel !== value)
+            channel = value;
             switchChannel(value)
         });
 
