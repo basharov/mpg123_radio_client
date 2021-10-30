@@ -1,22 +1,17 @@
 const Gpio = require('orange-pi-gpio');
+const readline = require('readline');
 
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+
+let value = 1;
 
 let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
-    let value = 1;
-
-    setInterval(function () {
-      process.stdout.write('\x1B[2J\x1B[0f\u001b[0;0H');
-
-      if (value) {
-        console.log('\x1b[32m%s\x1b[0m', `ON`);
-      } else {
-        console.log('\x1b[31m%s\x1b[0m', `OFF`);
-      }
-
-      gpio0.write(value);
-      value = +!value;
-    }, 100);
-
+    process.stdin.on('keypress', (str, key) => {
+      console.log(str)
+      console.log(key)
+      gpio0.write(value === 1 ? 0 : 1);
+    })
   }
 });
