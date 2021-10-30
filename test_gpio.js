@@ -4,7 +4,7 @@ const readline = require('readline');
 readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 
-let value = 1;
+let value = 0;
 
 let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
