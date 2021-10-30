@@ -16,7 +16,7 @@ let gpio0 = new Gpio({
 
       gpio0.write(value);
       value = +!value;
-    }, 50);
+    }, 10);
 
   }
 });
