@@ -10,6 +10,7 @@ let value = 0;
 let channel = 1;
 
 let gpio1 = new Gpio({pin: 1, mode: 'in'});
+let gpio2 = new Gpio({pin: 2, mode: 'in'});
 
 const switchChannel = (value) => {
   exec(`./play.sh ${value}`, (err, stdout, stderr) => {
@@ -25,12 +26,27 @@ const switchChannel = (value) => {
   });
 }
 
+const updateState = (state) => {
+  // console.log(`button: ${state}`); //state of pin 1
+  value = Number(state);
+  if (value !== previousValue) {
+    gpio0.write(value);
+    previousValue = value;
+    console.log({channel, value})
+    if (channel !== value) {
+      channel = value;
+      switchChannel(value);
+    }
+  }
+}
+
 let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
     console.log('Press q to quit.')
     switchChannel(1);
     process.stdin.on('keypress', (str, key) => {
       if (str === 'q') {
+        exec(`./stop.sh ${value}`);
         process.exit();
       }
       if (str === 'd') {
@@ -41,22 +57,13 @@ let gpio0 = new Gpio({
       }
     })
 
-        setInterval(() => {
-          gpio1.read()
-            .then((state) => {
-              // console.log(`button: ${state}`); //state of pin 1
-              value = Number(state);
-              if (value !== previousValue) {
-                gpio0.write(value);
-                previousValue = value;
-                console.log({channel, value})
-                if (channel !== value) {
-                  channel = value;
-                  switchChannel(value);
-                }
-              }
-            });
+    setInterval(() => {
+      gpio1.read()
+        .then(updateState);
 
-        }, 100)
+      gpio2.read()
+        .then(updateState);
+
+    }, 100)
   }
 });

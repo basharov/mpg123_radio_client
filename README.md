@@ -9,6 +9,9 @@ https://www.youtube.com/watch?v=vxYAnHCikHQ
 https://www.youtube.com/watch?v=QN6-C6N_YMg
 
 
+White noise
+https://askubuntu.com/questions/789465/generate-white-noise-to-calm-a-baby
+
 Pin 0 below is taken from wPi value, physical ping for which is 3
 ```
 let gpioPin = new Gpio({
