@@ -8,6 +8,7 @@ let value = 0;
 
 let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
+    console.log('Press q to quit.')
     process.stdin.on('keypress', (str, key) => {
       console.log(str)
       console.log(key)
