@@ -20,8 +20,8 @@ let gpio0 = new Gpio({
       gpio1.read()
         .then((state) => {
           // console.log(`button: ${state}`); //state of pin 1
-          value = state;
-          gpio0.write(value === 1 ? 0 : 1);
+          value = state === 0 ? 1 : 0;
+          gpio0.write(value);
         });
 
     },100)
