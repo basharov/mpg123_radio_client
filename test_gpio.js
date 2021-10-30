@@ -12,6 +12,9 @@ let gpio0 = new Gpio({
       console.log(str)
       console.log(key)
       console.log(value)
+      if (str === 'q') {
+        process.exit();
+      }
       gpio0.write(value === 1 ? 0 : 1);
     })
   }
