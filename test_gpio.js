@@ -24,6 +24,6 @@ let gpio0 = new Gpio({
           gpio0.write(value);
         });
 
-    },1000)
+    },100)
   }
 });
