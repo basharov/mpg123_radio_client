@@ -5,7 +5,10 @@
   "repository": "https://github.com/basharov/mpg123_radio_client.git",
   "author": "Sergei Basharov <sergei.basharov@unagi.ch>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./start.js"
+  },
   "dependencies": {
     "orange-pi-gpio": "^1.0.2"
-  }
+  },
 }
