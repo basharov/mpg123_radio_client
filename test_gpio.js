@@ -18,12 +18,12 @@ let gpio0 = new Gpio({
       if (str === 'q') {
         process.exit();
       }
-      value = value === 1 ? 0 : 1;
-      gpio0.write(value);
-
       gpio1.read()
         .then((state) => {
           console.log(`button: ${state}`); //state of pin 1
+          value = state;
+          gpio0.write(value);
+
         });
 
     })
