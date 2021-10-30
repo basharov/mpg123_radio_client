@@ -1,8 +1,8 @@
 const Gpio = require('orange-pi-gpio');
 
 
-let gpio12 = new Gpio({
-  pin: 12, mode: 'out', ready: () => {
+let gpio0 = new Gpio({
+  pin: 0, mode: 'out', ready: () => {
     let value = 1;
 
     setInterval(function () {
@@ -14,7 +14,7 @@ let gpio12 = new Gpio({
         console.log('\x1b[31m%s\x1b[0m', `OFF`);
       }
 
-      gpio12.write(value);
+      gpio0.write(value);
       value = +!value;
     }, 1000);
 
