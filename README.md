@@ -4,6 +4,10 @@ https://docs.armbian.com/User-Guide_Armbian-Config/
 https://github.com/orangepi-xunlong/wiringOP
 https://www.npmjs.com/package/orange-pi-gpio
 
+Галетный/Пакетный переключатель/Multipositional switch 
+https://www.youtube.com/watch?v=vxYAnHCikHQ
+https://www.youtube.com/watch?v=QN6-C6N_YMg
+
 
 Pin 0 below is taken from wPi value, physical ping for which is 3
 ```
