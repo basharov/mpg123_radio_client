@@ -16,7 +16,8 @@ let gpio0 = new Gpio({
       if (str === 'q') {
         process.exit();
       }
-      gpio0.write(value === 1 ? 0 : 1);
+      value = value === 1 ? 0 : 1;
+      gpio0.write(value);
     })
   }
 });
