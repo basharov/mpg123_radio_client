@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-pkill -f mpg123
+pkill -9 -f mpg123
 true > /tmp/mpg123out
