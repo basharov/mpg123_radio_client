@@ -19,7 +19,7 @@ let gpio0 = new Gpio({
     setInterval(()=>{
       gpio1.read()
         .then((state) => {
-          console.log(`button: ${state}`); //state of pin 1
+          // console.log(`button: ${state}`); //state of pin 1
           value = state;
           gpio0.write(value);
         });
