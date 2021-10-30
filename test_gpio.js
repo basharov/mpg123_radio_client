@@ -36,9 +36,11 @@ let gpio0 = new Gpio({
       if (str === 'd') {
         switchChannel(0)
       }
+      if (str === 'u') {
+        switchChannel(3)
+      }
     })
 
-    /*
         setInterval(() => {
           gpio1.read()
             .then((state) => {
@@ -56,6 +58,5 @@ let gpio0 = new Gpio({
             });
 
         }, 100)
-    */
   }
 });
