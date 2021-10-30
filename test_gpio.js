@@ -43,6 +43,7 @@ let gpio0 = new Gpio({
           value = Number(state);
           if (value !== previousValue) {
             gpio0.write(value);
+            previousValue = value;
             console.log({channel, value})
             if (channel !== value) {
               channel = value;
