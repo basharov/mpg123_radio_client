@@ -22,6 +22,9 @@ let gpio0 = new Gpio({
           // console.log(`button: ${state}`); //state of pin 1
           value = state;
           gpio0.write(value);
+          if(value){
+            console.log(new Date());
+          }
         });
 
     },100)
