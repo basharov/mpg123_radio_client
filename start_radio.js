@@ -6,8 +6,9 @@ readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 
 const pins = {
-  1: {pin: new Gpio({pin: 0, mode: 'in'})},
-  2: {pin: new Gpio({pin: 1, mode: 'in'})}
+  0: {pin: new Gpio({pin: 0, mode: 'in'})},
+  1: {pin: new Gpio({pin: 1, mode: 'in'})},
+  2: {pin: new Gpio({pin: 2, mode: 'in'})},
 }
 
 const switchChannel = (channelNumber) => {
