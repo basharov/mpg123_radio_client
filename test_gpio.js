@@ -12,20 +12,18 @@ let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
     console.log('Press q to quit.')
     process.stdin.on('keypress', (str, key) => {
-      console.log(str)
-      console.log(key)
-      console.log(value)
       if (str === 'q') {
         process.exit();
       }
+    })
+    setInterval(()=>{
       gpio1.read()
         .then((state) => {
           console.log(`button: ${state}`); //state of pin 1
           value = state;
           gpio0.write(value);
-
         });
 
-    })
+    },50)
   }
 });
