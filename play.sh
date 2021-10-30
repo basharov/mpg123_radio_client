@@ -2,6 +2,8 @@
 
 PIPE_FILE='/tmp/mpg123in'
 
+echo "Will play $1"
+
 case $1 in
 
   1)
