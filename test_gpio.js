@@ -6,6 +6,7 @@ readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 
 let value = 0;
+let channel = 1;
 
 let gpio1 = new Gpio({pin: 1, mode: 'in'});
 
@@ -36,7 +37,8 @@ let gpio0 = new Gpio({
           // console.log(`button: ${state}`); //state of pin 1
           value = state;
           gpio0.write(value);
-          switchChannel(2)
+          if (channel !== value)
+            switchChannel(value)
         });
 
     }, 100)
