@@ -37,6 +37,7 @@ let gpio0 = new Gpio({
           // console.log(`button: ${state}`); //state of pin 1
           value = state;
           gpio0.write(value);
+          console.log({channel, value})
           if (channel !== value)
             switchChannel(value)
         });
