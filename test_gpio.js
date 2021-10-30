@@ -28,6 +28,7 @@ const switchChannel = (value) => {
 let gpio0 = new Gpio({
   pin: 0, mode: 'out', ready: () => {
     console.log('Press q to quit.')
+    switchChannel(1);
     process.stdin.on('keypress', (str, key) => {
       if (str === 'q') {
         process.exit();
@@ -37,22 +38,24 @@ let gpio0 = new Gpio({
       }
     })
 
-    setInterval(() => {
-      gpio1.read()
-        .then((state) => {
-          // console.log(`button: ${state}`); //state of pin 1
-          value = Number(state);
-          if (value !== previousValue) {
-            gpio0.write(value);
-            previousValue = value;
-            console.log({channel, value})
-            if (channel !== value) {
-              channel = value;
-              switchChannel(value);
-            }
-          }
-        });
+    /*
+        setInterval(() => {
+          gpio1.read()
+            .then((state) => {
+              // console.log(`button: ${state}`); //state of pin 1
+              value = Number(state);
+              if (value !== previousValue) {
+                gpio0.write(value);
+                previousValue = value;
+                console.log({channel, value})
+                if (channel !== value) {
+                  channel = value;
+                  switchChannel(value);
+                }
+              }
+            });
 
-    }, 100)
+        }, 100)
+    */
   }
 });
