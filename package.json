@@ -6,7 +6,7 @@
   "author": "Sergei Basharov <sergei.basharov@unagi.ch>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./start.js"
+    "start": "node ./start_radio.js"
   },
   "dependencies": {
     "orange-pi-gpio": "^1.0.2"
