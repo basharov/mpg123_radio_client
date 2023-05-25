@@ -9,6 +9,7 @@
     "start": "node ./start.js"
   },
   "dependencies": {
+    "mplayer": "2.1.0",
     "nodary-encoder": "0.1.4"
   }
 }
