@@ -1,14 +1,14 @@
 {
-  "name": "mpg123",
+  "name": "radio",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/basharov/mpg123_radio_client.git",
   "author": "Sergei Basharov <sergei.basharov@unagi.ch>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./start_radio.js"
+    "start": "node ./start.js"
   },
   "dependencies": {
-    "orange-pi-gpio": "^1.0.2"
+    "nodary-encoder": "0.1.4"
   }
 }
