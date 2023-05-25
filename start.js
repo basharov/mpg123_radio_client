@@ -8,6 +8,6 @@ myEncoder.on('rotation', (direction, value) => {
   previousVolume = volume
   volume = value
   if (volume !== previousVolume) {
-    volume
+    console.log(volume)
   }
 });
