@@ -4,6 +4,13 @@ const myEncoder = nodaryEncoder(20, 9);
 let previousStation = 0
 let station = 0
 
+const stationsTitles = [
+  'Vaporwaves',
+  'Boot Liquor',
+  'Indie Pop Rocks',
+  'Groove Salad',
+]
+
 const stations = [
   'http://somafm.com/m3u/vaporwaves.m3u',
   'http://somafm.com/m3u/bootliquor.m3u',
@@ -24,7 +31,7 @@ myEncoder.on('rotation', (direction, value) => {
 
 
   if (station !== previousStation) {
-    console.log(station)
+    console.log(stationsTitles[station])
     player.openPlaylist(stations[station], {
       cache: 128,
       cacheMin: 1
