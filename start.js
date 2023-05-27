@@ -25,11 +25,6 @@ const stations = [
   'http://somafm.com/m3u/lush.m3u',
 ]
 
-player.openPlaylist(stations[station], {
-  cache: 128,
-  cacheMin: 1
-})
-
 myEncoder.on('rotation', (direction, value) => {
   previousStation = station
 
@@ -56,3 +51,8 @@ myEncoder.on('rotation', (direction, value) => {
 const MPlayer = require('mplayer');
 
 const player = new MPlayer();
+
+player.openPlaylist(stations[station], {
+  cache: 128,
+  cacheMin: 1
+})
