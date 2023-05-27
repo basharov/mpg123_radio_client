@@ -10,6 +10,9 @@ const stationsTitles = [
   'Boot Liquor',
   'Indie Pop Rocks',
   'Groove Salad',
+  'Underground 80s',
+  'Seven Inch Soul',
+  'Lush',
 ]
 
 const stations = [
